@@ -17,9 +17,9 @@ yarn-error.log*
 
 # Vector Database
 vector_db/
-faiss_store/
-*.faiss
-*.pkl
+!backend/vector_db/
+!backend/vector_db/faiss_store/
+!backend/vector_db/faiss_store/*
 chroma/
 chroma.sqlite3
 
@@ -64,5 +64,3 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
-
-.vercel
