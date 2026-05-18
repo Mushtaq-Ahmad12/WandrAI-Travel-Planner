@@ -1,8 +1,14 @@
 import axios from "axios";
 import type { ItineraryRequest, ItineraryResponse, WeatherForecast } from "../types/itinerary";
 
+const getBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (!envUrl) return "http://localhost:8000/api";
+  return envUrl.endsWith("/api") ? envUrl : `${envUrl.replace(/\/$/, "")}/api`;
+};
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:8000/api",
+  baseURL: getBaseUrl(),
   headers: { "Content-Type": "application/json" },
   timeout: 120000, // 2 min — LLM + RAG can take time
 });
