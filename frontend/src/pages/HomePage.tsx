@@ -16,7 +16,7 @@ export default function HomePage() {
   const { generate, loading, error } = useItinerary();
 
   const handleSubmit = async (req: ItineraryRequest) => {
-    const result = await generate(req);
+    await generate(req);
     navigate("/itinerary", { state: { request: req } });
   };
 

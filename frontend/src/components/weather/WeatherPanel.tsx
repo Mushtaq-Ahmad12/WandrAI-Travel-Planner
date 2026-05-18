@@ -13,7 +13,7 @@ export default function WeatherPanel({ days, destination, summary }: WeatherPane
       <div className="flex items-center gap-2 mb-4">
         <span className="text-xl">🌤️</span>
         <h3 className="font-semibold text-slate-900 dark:text-white text-sm">
-          Weather Forecast
+          Weather in {destination}
         </h3>
       </div>
       <p className="text-xs text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">
